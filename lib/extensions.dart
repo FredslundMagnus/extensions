@@ -1,15 +1,23 @@
 extension Mixer<E> on Iterable<E> {
   List<E> mix() {
-    List<E> l = this.toList();
+    var l = toList();
     l.shuffle();
     return l;
   }
 }
 
-
 extension Capitalize on String {
   String capitalize() {
-    return "${this[0].toUpperCase()}${this.substring(1)}";
+    if (isEmpty) return '';
+    return '${this[0].toUpperCase()}${substring(1)}';
+  }
+}
+
+extension CapitalizeWithNull on String? {
+  String? capitalize() {
+    var temp = this;
+    if (temp == null) return null;
+    return temp.capitalize();
   }
 }
 
