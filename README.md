@@ -1,1 +1,1 @@
-# extensions
+A simple command-line application.
